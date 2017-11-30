@@ -11,13 +11,14 @@ class user_model extends CI_Model{
         return $this->db->insert('users', $data);
     }
     public function login($username, $password){
-        $this->db->where('username', $username);
-        $this->db->where('password', $password);
 
-        $result = $this->db->get('users');
+        $myquery = $this->db->query("SELECT * FROM users WHERE username = '$username'");
 
-        if($result->num_rows() == 1){
-            return $result->row(0)->id;
+        if($myquery->num_rows() == 1){
+            $pwhash = $myquery->row(0)->password;
+            if(password_verify($password, $pwhash)){
+                return $myquery->row(0)->username;
+            }
         }else{
             return false;
         }

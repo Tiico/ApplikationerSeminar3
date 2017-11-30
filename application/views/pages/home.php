@@ -18,6 +18,3 @@
                     <a href="pancakes" class="button" role="button">Read more &#8594;</a>
                 </div>
             </div>
-        <script src="modalscript.js"></script>
-    </body>
-</html>

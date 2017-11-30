@@ -177,6 +177,3 @@
 
                 </div><!-- /. calendar -->
             </div><!-- /. wrap -->
-        <script src="modalscript.js"></script>
-    </body>
-</html>

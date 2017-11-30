@@ -28,24 +28,19 @@
             <?php endif ?>
 
             <?php if($this->session->userdata('logged_in')) : ?>
-            <a href="users/logout" style="float:right;" id="logoutbtn">Log out</a>
+            <a href="<?php echo base_url(); ?>users/logout" style="float:right;" id="logoutbtn">Log out</a>
             <?php endif ?>
         </div>
         <div id="container">
-
-            <?php if($this->session->flashdata('user_registered')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('user-registered').'</p>'; ?>
-            <?php endif; ?>
-
             <div id="id01" class="modal">
-                <form class="modal-content animate" action="<?php echo base_url(); ?>Users/login" method="post">
+                <form class="modal-content animate" action="<?php echo base_url(); ?>users/login" method="post">
                     <div class="form-group">
                         <label>Username:<sup>*</sup></label>
-                        <input type="text" name="username"class="form-control" value="">
+                        <input type="text" name="username"class="form-control" value="" required>
                     </div>
                     <div class="form-group">
                         <label>Password:<sup>*</sup></label>
-                        <input type="password" name="password" class="form-control">
+                        <input type="password" name="password" class="form-control" required>
                     </div>
                     <div>
                         <input type="submit" class="btn btn-primary" value="Submit">
@@ -56,9 +51,11 @@
                     </div>
                 </form>
             </div>
-
             <?php if($this->session->flashdata('login_failed')):?>
             <?php echo '<p class="fail">'.$this->session->flashdata('login_failed').'</p>'; ?>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('user_registered')):?>
+            <?php echo '<p class="success">'.$this->session->flashdata('user_registered').'</p>'; ?>
             <?php endif; ?>
             <?php if($this->session->flashdata('comment_created')):?>
             <?php echo '<p class="success">'.$this->session->flashdata('comment_created').'</p>'; ?>

@@ -20,7 +20,7 @@ body{
     background-color: #0AAF53;
     color: white;
     text-align: center;
-    padding: 3px;
+    padding: 1%;
     border-radius: 6px;
 }
 .fail{
@@ -29,7 +29,7 @@ body{
     background-color: red;
     color: white;
     text-align: center;
-    padding: 3px;
+    padding: 1%;
     border-radius: 6px;
 
 }

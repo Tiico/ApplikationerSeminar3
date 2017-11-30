@@ -5,7 +5,7 @@ class Users extends CI_Controller{
     public function register(){
         $data['title'] = 'Sign Up';
 
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]', array('is_unique' => 'This username already exists. Please pick another one.'));
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]|alpha_numeric', array('is_unique' => 'This username already exists. Please pick another one.'));
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
 
@@ -15,23 +15,24 @@ class Users extends CI_Controller{
             $this->load->view('templates/footer');
         }
         else{
-            //Add encryption later
-            $password = $this->input->post('password');
+            //Encrypting the password and send to model-layer
+            $password = password_hash($this->input->post('password'),PASSWORD_DEFAULT);
 
             $this->user_model->register($password);
 
             //Set message
             $this->session->set_flashdata('user_registered', 'You are now registered and can log in.');
 
-            redirect('home');
+            redirect($this->session->userdata('last_page'));
         }
     }
     //login
     public function login(){
-        $data['title'] = 'Sign Up';
+        $data['title'] = 'Login';
 
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required');
+        $lastpage = $this->session->userdata('last_page');
 
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
