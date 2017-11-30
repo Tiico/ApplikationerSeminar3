@@ -56,7 +56,7 @@
     <?php
     if($this->session->userdata('username')){
         echo '<form action="comments/create" id="userform" method="post">
-                    Cringing as: ' .$this->session->userdata('username'). '
+                    Commenting as: ' .$this->session->userdata('username'). '
                     <br>
                     <textarea name="body" form="userform" rows="4" required placeholder="Enter comment here..."></textarea>
                     <input type="hidden" name="food" value="meatballs"/>
