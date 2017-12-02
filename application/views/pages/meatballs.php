@@ -60,7 +60,7 @@
                     <br>
                     <textarea name="body" form="userform" rows="4" required placeholder="Enter comment here..."></textarea>
                     <input type="hidden" name="food" value="meatballs"/>
-                    <input id="submit" name="pancakes" type="submit" value="Send"/>
+                    <input id="submit" name="meatballs" type="submit" value="Send"/>
                     </form>';
     }
     elseif(!$this->session->userdata('username')){
