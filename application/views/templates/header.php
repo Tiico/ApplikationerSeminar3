@@ -54,6 +54,9 @@
             <?php if($this->session->flashdata('login_failed')):?>
             <?php echo '<p class="fail">'.$this->session->flashdata('login_failed').'</p>'; ?>
             <?php endif; ?>
+            <?php if($this->session->flashdata('comment_created_fail')):?>
+            <?php echo '<p class="fail">'.$this->session->flashdata('comment_created_fail').'</p>'; ?>
+            <?php endif; ?>
             <?php if($this->session->flashdata('user_registered')):?>
             <?php echo '<p class="success">'.$this->session->flashdata('user_registered').'</p>'; ?>
             <?php endif; ?>
