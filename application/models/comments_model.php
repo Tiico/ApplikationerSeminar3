@@ -23,9 +23,11 @@ class comments_model extends CI_Model{
             $this->db->insert('comments', $data);
         }
     public function delete_comment($id){
-        $comment_query = $this->db->query("SELECT * FROM comments WHERE id = '$id'");
+        $sql = ("SELECT * FROM comments WHERE id = ?");
+        $comment_query = $this->db->query($sql, array($id));
         if($comment_query->row(0)->username == $this->session->userdata('username')){
-            $this->db->query("DELETE FROM comments WHERE id = '$id'");
+            $sql2 = ("DELETE FROM comments WHERE id = ?");
+            $this->db->query($sql2, array($id));
             return true;
         }else{
             die('You cant delete other users comments!');
