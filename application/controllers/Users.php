@@ -30,7 +30,7 @@ class Users extends CI_Controller{
     public function login(){
         $data['title'] = 'Login';
 
-        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('username', 'Username', 'alpha_numeric|trim|required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $lastpage = $this->session->userdata('last_page');
 
