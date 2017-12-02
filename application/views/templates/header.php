@@ -23,8 +23,8 @@
                 </div>
             </div>
             <?php if(!$this->session->userdata('logged_in')) : ?>
-            <a href="users/register">Register</a>
-            <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+            <a href="<?php echo base_url(); ?>users/register">Register</a>
+            <button id="loginbtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</button>
             <?php endif ?>
 
             <?php if($this->session->userdata('logged_in')) : ?>
@@ -36,7 +36,7 @@
                 <form class="modal-content animate" action="<?php echo base_url(); ?>users/login" method="post">
                     <div class="form-group">
                         <label>Username:<sup>*</sup></label>
-                        <input type="text" name="username"class="form-control" value="" required>
+                        <input type="text" name="username"class="form-control" value="" autofocus required>
                     </div>
                     <div class="form-group">
                         <label>Password:<sup>*</sup></label>
