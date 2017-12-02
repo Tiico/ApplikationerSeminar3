@@ -84,7 +84,7 @@ body{
     font-size: 16px;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 15px 16px;
     text-decoration: none;
 }
 /* The dropdown container */
@@ -244,7 +244,7 @@ body{
     word-wrap: break-word;
 }
 #cmntdelbtn{
-    color: white;
+    color: black;
     float: right;
     border: none;
     background-color: red;
@@ -265,6 +265,7 @@ body{
     border: none;
     background-color: #4CAF50;
     vertical-align: top;
+    border-radius: 6px;
 }
 .commentsection{
     margin-top: 1%;
@@ -410,7 +411,7 @@ input[type=text], input[type=password] {
 .modal-content input[type=submit], #loginbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 16px 20px;
+    padding: 14px 20px;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -422,8 +423,15 @@ input[type=text], input[type=password] {
 .modal-content input[type=submit]:hover {
     opacity: 0.8;
 }
+#logoutbtn{
+    background-color: #F44336;
+    padding: 15px 14px;
+    cursor: pointer;
+    font-size: 16px;
+}
 #loginbtn{
     float: right;
+    font-size: 16px;
 }
 
 /* Extra styles for the cancel button */
