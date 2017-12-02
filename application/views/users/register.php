@@ -19,6 +19,3 @@
         <p>Already registered? <a href="login.php">Login here</a>.</p>
     <?php echo form_close(); ?>
 </div>
-<script src="modalscript.js"></script>
-</body>
-</html>
