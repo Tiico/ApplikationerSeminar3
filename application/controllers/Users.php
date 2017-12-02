@@ -7,7 +7,7 @@ class Users extends CI_Controller{
 
         $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|is_unique[users.username]|alpha_numeric', array('is_unique' => 'This username already exists. Please pick another one.'));
         $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('password2', 'Confirm Password', 'matches[password]');
+        $this->form_validation->set_rules('password2', 'Confirm Password', 'required|matches[password]');
 
         if($this->form_validation->run() === FALSE){
             $this->load->view('templates/header');
