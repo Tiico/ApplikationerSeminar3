@@ -1,6 +1,6 @@
             <div id="welcome">
                 <h2>Welcome to Tasty Recipes!</h2>
-                <p>Thank you so much for stopping by the site! If you are new to Tasty Recipes, the one thing you should know about us is that we are obsessed with creating scratch cooking recipes that you will love. Also, if you want to check out our food calendar by clicking <a href="calendar">here!</a></p>
+                <p>Thank you so much for stopping by the site! If you are new to Tasty Recipes, the one thing you should know about us is that we are obsessed with creating scratch cooking recipes that you will love. Also, if you want to check out our food calendar you can do so by clicking <a href="calendar">here!</a></p>
             </div>
             <hr>
             <div id="recent">
