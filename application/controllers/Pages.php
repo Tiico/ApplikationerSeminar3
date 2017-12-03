@@ -4,6 +4,7 @@
             if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
                 show_404();
             }
+        $this->output->cache(10);
         $data['title'] = ucfirst($page);
         $data['comments'] = $this->comments_model->get_comments();
 
