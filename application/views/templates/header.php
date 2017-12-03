@@ -9,7 +9,7 @@
     </head>
     <body>
         <?php $this->session->set_userdata('last_page', current_url()); ?>
-        <h1 id="header"><a href="index.php">Tasty Recipes</a></h1>
+        <h1 id="header"><a href="<?php echo base_url(); ?>home">Tasty Recipes</a></h1>
         <div class="navbar">
             <a href="<?php echo base_url(); ?>home">Home</a>
             <a href="<?php echo base_url(); ?>calendar">Calendar</a>
