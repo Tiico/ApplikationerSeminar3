@@ -14,6 +14,7 @@ class Comments extends CI_Controller{
         }else{
             $this->comments_model->create_comment($food);
             $this->session->set_flashdata('comment_created', 'Your comment has been created!');
+            hej
         }
         redirect($food);
     }
