@@ -32,7 +32,7 @@ class Comments extends CI_Controller{
             $this->load->view('pages/'.$food, $data);
             $this->load->view('templates/footer');
 
-            $this->session->set_flashdata('comment_created_fail', 'Wrong comment format, try again!!');
+            $this->session->set_flashdata('comment_created_fail', 'Wrong comment format, try again!');
         }else{
             $this->comments_model->create_comment($food);
             $this->session->set_flashdata('comment_created', 'Your comment has been created!');
