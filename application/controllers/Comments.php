@@ -1,6 +1,28 @@
 <?php
 class Comments extends CI_Controller{
-    public function create(){
+    public function showComments(){
+        $result = $this->comments_model->showComments();
+        echo json_encode($result);
+    }
+    public function addComment(){
+        $result = $this->comments_model->addComment();
+        $msg['success'] = false;
+        if($result){
+            $msg['success'] = true;
+        }
+        echo json_encode($msg);
+    }
+    public function deletee(){
+        $result = $this->comments_model->deletee_comment();
+        $msg['success'] = false;
+        if($result){
+            $msg['success'] = true;
+        }
+        echo json_encode($msg);
+    }
+
+    //******************** Without Javascript *******************
+    /*    public function create(){
         $food = $this->input->post('food');
         $this->form_validation->set_rules('body', 'Comment', 'trim|required');
         $data['comments'] = $this->comments_model->get_comments();
@@ -20,8 +42,7 @@ class Comments extends CI_Controller{
     public function delete($id){
         $food = $this->input->post('food');
         $this->comments_model->delete_comment($id);
-
         $this->session->set_flashdata('comment_deleted', 'Your comment has been deleted!');
         redirect($food);
-    }
+    } */
 }
