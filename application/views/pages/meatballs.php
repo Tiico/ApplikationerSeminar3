@@ -63,7 +63,7 @@
     </form>
     <?php endif; ?>
     <?php if(!$this->session->userdata('logged_in')) : ?>
-    echo 'Log in, in order to be able to comment!';
+    Log in, in order to be able to comment!
     <?php endif; ?>
 </div>
 
