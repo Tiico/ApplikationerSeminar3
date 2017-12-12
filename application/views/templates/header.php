@@ -5,8 +5,13 @@
         <title>Tasty Recipes</title>
         <meta name="Nicklas Ockelberg" content="Seminar 3">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="<?php echo asset_url();?>css/stylesheet.css">
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jQueryAjax.js"></script>
     </head>
+
     <body>
         <?php $this->session->set_userdata('last_page', current_url()); ?>
         <h1 id="header"><a href="<?php echo base_url(); ?>home">Tasty Recipes</a></h1>
