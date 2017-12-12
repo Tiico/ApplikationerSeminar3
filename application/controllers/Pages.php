@@ -5,11 +5,11 @@
                 show_404();
             }
         $data['title'] = ucfirst($page);
-        $data['comments'] = $this->comments_model->get_comments();
 
         $this->load->view('templates/header');
         $this->load->view('pages/'.$page, $data);
         $this->load->view('templates/footer');
         }
     }
-?>
+
+//$data['comments'] = $this->comments_model->get_comments();
