@@ -53,38 +53,21 @@
 <hr>
 <!-- wrap with php and set if statement to check if logged in-->
 <div class="commentsubmit">
-    <?php
-    if($this->session->userdata('username')){
-        echo '<form action="comments/create" id="userform" method="post">
-                    Commenting as: ' .$this->session->userdata('username'). '
-                    <br>
-                    <textarea name="body" form="userform" rows="4" required placeholder="Enter comment here..."></textarea>
-                    <input type="hidden" name="food" value="meatballs"/>
-                    <input id="submit" name="meatballs" type="submit" value="Send"/>
-                    </form>';
-    }
-    elseif(!$this->session->userdata('username')){
-        echo 'Log in, in order to be able to comment!';
-    }
-    ?>
+    <?php if($this->session->userdata('logged_in')) : ?>
+    <form action="<?php echo base_url() ?>comments/addComment" id="myForm" method="post">
+        Commenting as: <?php echo $this->session->userdata('username')?>.
+        <br>
+        <textarea name="body" form="myForm" rows="4" placeholder="Enter comment here..."></textarea>
+        <input type="hidden" name="food" value="meatballs"/>
+        <button id="addcomment" name="meatballs" type="submit">Send</button>
+    </form>
+    <?php endif; ?>
+    <?php if(!$this->session->userdata('logged_in')) : ?>
+    echo 'Log in, in order to be able to comment!';
+    <?php endif; ?>
 </div>
+
 <hr>
 <div class="commentsection">
-    <h2>Comments:</h2>
-    <?php
-    foreach($comments as $comment):
-    if($comment['food'] == 'meatballs'){?>
-    <div class="comment">
-        <?php if($this->session->userdata('username') == $comment['username']) : ?>
-        <?php echo form_open('comments/delete/'.$comment['id']); ?>
-        <button type="submit" value="Delete" id="cmntdelbtn">Delete</button>
-        <input type="hidden" name="food" value="meatballs";>
-        <?php echo form_close(); ?>
-        <?php endif; ?>
-        <h3><?php echo $comment['username']?></h3>
-        <p><?php echo $comment['comment']?></p>
-    </div>
-    <?php
-                                       } endforeach;
-    ?>
+    <div id="test"></div>
 </div>
