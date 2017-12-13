@@ -58,7 +58,7 @@
         Commenting as: <?php echo $this->session->userdata('username')?>.
         <br>
         <textarea name="body" form="myForm" rows="4" placeholder="Enter comment here..." required></textarea>
-        <input type="hidden" name="food" value="meatballs"/>
+        <input id="forRecipe" type="hidden" name="food" value="meatballs"/>
         <button id="addcomment" name="meatballs" type="submit">Send</button>
     </form>
     <?php endif; ?>
