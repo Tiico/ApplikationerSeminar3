@@ -1,8 +1,9 @@
 $(document).ready(function(){
     showComments();
-    $('#addcomment').click(function(){
+    $('#addcomment').click(function(e){
         var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
+        e.preventDefault();
 
         $.ajax({
             type: 'ajax',
@@ -31,7 +32,7 @@ $(document).ready(function(){
         $.ajax({
             type: 'ajax',
             method: 'get',
-            async: false,
+            async: true,
             url: 'http://localhost/seminarie3/comments/deletee',
             data:{id:id},
             dataType: 'json',
@@ -66,7 +67,7 @@ $(document).ready(function(){
                     }else{
                         deletee = '';
                     }
-                    if(data[i].food == 'meatballs'){
+                    if(data[i].food == $('#forRecipe').val()){
                         output += '<div class="comment">'+deletee+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                     }
                 }

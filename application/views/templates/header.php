@@ -56,24 +56,17 @@
                     </div>
                 </form>
             </div>
+            <div class="alert-success" style="display: none"></div>
+
             <?php if($this->session->flashdata('login_failed')):?>
             <?php echo '<p class="fail">'.$this->session->flashdata('login_failed').'</p>'; ?>
             <?php endif; ?>
-            <?php if($this->session->flashdata('comment_created_fail')):?>
-            <?php echo '<p class="fail">'.$this->session->flashdata('comment_created_fail').'</p>'; ?>
-            <?php endif; ?>
             <?php if($this->session->flashdata('user_registered')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('user_registered').'</p>'; ?>
-            <?php endif; ?>
-            <?php if($this->session->flashdata('comment_created')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('comment_created').'</p>'; ?>
-            <?php endif; ?>
-            <?php if($this->session->flashdata('comment_deleted')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('comment_deleted').'</p>'; ?>
+            <?php echo '<p class="alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
             <?php endif; ?>
             <?php if($this->session->flashdata('user_loggedout')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
+            <?php echo '<p class="alert-success">'.$this->session->flashdata('user_loggedout').'</p>'; ?>
             <?php endif; ?>
             <?php if($this->session->flashdata('user_loggedin')):?>
-            <?php echo '<p class="success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
+            <?php echo '<p class="alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
             <?php endif; ?>
