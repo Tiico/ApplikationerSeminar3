@@ -243,15 +243,16 @@ body{
     padding: 15px;
     word-wrap: break-word;
 }
-#cmntdelbtn{
+.deletebutton{
     color: black;
+    text-decoration: none;
     float: right;
     border: none;
     background-color: red;
     padding: 10px;
 }
-.commentsubmit button{
-    padding: 1%;
+#addcomment{
+    padding: 15px;
     margin-bottom: 1%;
     color: white;
     background: #2f2828;
