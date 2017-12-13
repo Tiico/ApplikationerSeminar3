@@ -255,9 +255,11 @@ body{
     padding: 15px;
     margin-bottom: 1%;
     color: white;
-    background: #2f2828;
+    background: #4CAF50;
     border-radius: 10px;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 #submit{
     margin-left: 13%;
