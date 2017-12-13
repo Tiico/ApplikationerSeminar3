@@ -67,7 +67,7 @@ $(document).ready(function(){
                     }else{
                         deletee = '';
                     }
-                    if(data[i].food == 'meatballs'){
+                    if(data[i].food == $('#forRecipe').val()){
                         output += '<div class="comment">'+deletee+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                     }
                 }
