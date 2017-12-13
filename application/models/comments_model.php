@@ -13,17 +13,22 @@ class comments_model extends CI_Model{
         }
     }
     public function addComment(){
-        $comment = htmlspecialchars($this->input->post('body'));
-        $data = array(
-            'username' => $this->session->userdata('username'),
-            'comment' => $comment,
-            'food'=>$this->input->post('food'),
-        );
-        $this->db->insert('comments', $data);
-        if($this->db->affected_rows() > 0){
-            return true;
-        }else{
-            return false;
+        $this->form_validation->set_rules('body', 'Comment', 'trim|required');
+
+        if($this->form_validation->run() === TRUE){
+
+            $comment = htmlspecialchars($this->input->post('body'));
+            $data = array(
+                'username' => $this->session->userdata('username'),
+                'comment' => $comment,
+                'food'=>$this->input->post('food'),
+            );
+            $this->db->insert('comments', $data);
+            if($this->db->affected_rows() > 0){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
     function deletee_comment(){
