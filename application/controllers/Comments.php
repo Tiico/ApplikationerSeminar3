@@ -20,4 +20,9 @@ class comments extends CI_Controller{
         }
         echo json_encode($msg);
     }
+    public function longPolling(){
+        $rows = $this->input->post('rows');
+        $result = $this->comments_model->longPolling($rows);
+        echo $result;
+    }
 }
