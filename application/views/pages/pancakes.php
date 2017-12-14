@@ -48,6 +48,7 @@
         Melt the butter in the frying pan and add to the batter. Fry thin pancakes of the batter in a frying pan or pancake pan. Serve with jam, berries or fruit.
     </p>
 </div>
+    <input id="forRecipe" type="hidden" name="food" value="pancakes"/>
 <hr>
 <div class="commentsubmit">
     <?php if($this->session->userdata('logged_in')) : ?>
