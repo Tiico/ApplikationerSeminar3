@@ -31,7 +31,7 @@ class comments_model extends CI_Model{
             }
         }
     }
-    function delete_comment(){
+    public function delete_comment(){
         $id = $this->input->get('id');
         $comment_query = $this->db->query("SELECT * FROM comments WHERE id = '$id'");
         if($comment_query->row(0)->username == $this->session->userdata('username')){
@@ -41,6 +41,17 @@ class comments_model extends CI_Model{
             }else{
                 return false;
             }
+        }
+    }
+    public function longPolling($rows){
+        while(true){
+            $query = $this->db->get('comments');
+            if($rows != $query->num_rows()){
+                $rows = $query->num_rows();
+                return $rows;
+            }
+            session_write_close();
+            sleep(1);
         }
     }
 
