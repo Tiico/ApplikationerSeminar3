@@ -1,5 +1,7 @@
 $(document).ready(function(){
+    var rows = 0;
     showComments();
+    longPolling();
     $('#addcomment').click(function(e){
         var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
@@ -49,6 +51,18 @@ $(document).ready(function(){
             }
         });
     });
+    function longPolling(){
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/seminarie3/Comments/longPolling',
+            data: {rows:rows},
+            dataType: 'json',
+            success: function(data){
+                showComments();
+                longPolling();
+            },
+        })
+    }
 
 
     function showComments(){
@@ -61,12 +75,14 @@ $(document).ready(function(){
                 var output = '';
                 var deletes = '';
                 var i;
+                rows = data.length;
                 for(i = 0; i<data.length;i++){
                     if($('#username').text() == data[i].username){
                         deletes = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'
                     }else{
                         deletes = '';
                     }
+                    data[i].username;
                     if(data[i].food == $('#forRecipe').val()){
                         output += '<div class="comment">'+deletes+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                     }
