@@ -51,6 +51,7 @@
     </p>
 </div>
 <hr>
+<input id="forRecipe" type="hidden" name="food" value="meatballs"/>
 <!-- wrap with php and set if statement to check if logged in-->
 <div class="commentsubmit">
     <?php if($this->session->userdata('logged_in')) : ?>
