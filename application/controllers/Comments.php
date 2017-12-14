@@ -12,8 +12,8 @@ class comments extends CI_Controller{
         }
         echo json_encode($msg);
     }
-    public function deletee(){
-        $result = $this->comments_model->deletee_comment();
+    public function delete(){
+        $result = $this->comments_model->delete_comment();
         $msg['success'] = false;
         if($result){
             $msg['success'] = true;

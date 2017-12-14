@@ -69,5 +69,5 @@
 
 <hr>
 <div class="commentsection">
-    <div id="test"></div>
+    <div id="comments"></div>
 </div>

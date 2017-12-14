@@ -27,13 +27,13 @@ $(document).ready(function(){
         });
     })
 
-    $('#test').on('click', '.deletebutton', function(){
+    $('#comments').on('click', '.deletebutton', function(){
         var id = $(this).attr('data');
         $.ajax({
             type: 'ajax',
             method: 'get',
             async: true,
-            url: 'http://localhost/seminarie3/comments/deletee',
+            url: 'http://localhost/seminarie3/comments/delete',
             data:{id:id},
             dataType: 'json',
             success: function(response){
@@ -59,20 +59,20 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(data){
                 var output = '';
-                var deletee = '';
+                var deletes = '';
                 var i;
                 for(i = 0; i<data.length;i++){
                     if($('#username').text() == data[i].username){
-                        deletee = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'
+                        deletes = '<a href="javascript:;" class="deletebutton" data="'+data[i].id+'">Delete</a>'
                     }else{
-                        deletee = '';
+                        deletes = '';
                     }
                     if(data[i].food == $('#forRecipe').val()){
-                        output += '<div class="comment">'+deletee+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
+                        output += '<div class="comment">'+deletes+'<h3 class="commentusername">'+data[i].username+'</h3><p>'+data[i].comment+'</p></div>';
                     }
                 }
 
-                $('#test').html(output);
+                $('#comments').html(output);
             },
             error: function(){
                 alert('could not get data from database');

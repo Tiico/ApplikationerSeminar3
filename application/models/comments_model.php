@@ -31,7 +31,7 @@ class comments_model extends CI_Model{
             }
         }
     }
-    function deletee_comment(){
+    function delete_comment(){
         $id = $this->input->get('id');
         $comment_query = $this->db->query("SELECT * FROM comments WHERE id = '$id'");
         if($comment_query->row(0)->username == $this->session->userdata('username')){
